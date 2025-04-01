@@ -1,0 +1,71 @@
+HTML (index.html)<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMPORTANT ANNOUNCEMENT</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>URGENT: System Update Required</h1>
+        <p>Your device has been selected for a mandatory update. Please wait while we process your request...</p>
+        <div class="loading">Processing... <span class="dots"></span></div>
+        <div class="surprise" style="display: none;">
+            <h2>APRIL FOOLS!</h2>
+            <p>You've been Rickrolled!</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <p>Gotcha! Happy April 1st, 2025!</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>CSS (styles.css)body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #d32f2f;
+}
+
+p {
+    font-size: 18px;
+}
+
+.loading {
+    font-size: 20px;
+    color: #1976d2;
+}
+
+.dots::after {
+    content: '';
+    animation: dots 1.5s infinite;
+}
+
+@keyframes dots {
+    0% { content: '.'; }
+    33% { content: '..'; }
+    66% { content: '...'; }
+}
+
+.surprise h2 {
+    color: #388e3c;
+    font-size: 36px;
+}JavaScript (script.js)setTimeout(() => {
+    document.querySelector('.loading').style.display = 'none';
+    document.querySelector('.surprise').style.display = 'block';
+}, 3000); // Switches to the prank after 3 seconds
